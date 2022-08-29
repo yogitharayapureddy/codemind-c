@@ -1,44 +1,53 @@
 #include<stdio.h>
-#include<math.h>
 int p(int n)
 {
-    int d=0,i,a;
-    a=n;
-    while(n)
+    int rev=0,temp=n,r;
+    while(temp>0)
     {
-        i=n%10;
-        d=d*10+i;
-        n/=10;
+        r=temp%10;
+        rev=(rev*10)+r;
+        temp=temp/10;
     }
-    if(d==a)
-    return 1;
-    else
+    if(rev==n)
+    {
+        return 1;
+    }
     return 0;
-    
 }
 int main()
 {
-    int a,b,n;
-    scanf("%d",&n);
-    a=n+1;
-    b=n-1;
-    while(1)
+    int a;
+    scanf("%d",&a);
+    int d1=0,d2=0,i,j;
+    int p1,p2;
+    for(i=a+1;i<=10000;i++)
     {
-        if(p(a)==1)
-        break;
-        a++;
+        if(p(i)==1)
+        {
+            d1=i-a;
+            p1=i;
+            break;
+        }
     }
-    while(1)
+    for(i=a-1;i>0;i--)
     {
-        if(p(b)==1)
-        break;
-        b--;
-        
+        if(p(i)==1)
+        {
+            d2=a-i;
+            p2=i;
+            break;
+        }
     }
-    if(abs(b-n)==abs(a-n))
-    printf("%d %d",b,a);
-    else if(abs(b-n)>abs(a-n))
-    printf("%d",a);
+    if(d1>d2)
+    {
+        printf("%d",p2);
+    }
+    else if(d2==d1)
+    {
+        printf("%d %d",p2,p1);
+    }
     else
-    printf("%d",b);
+    {
+        printf("%d",p1);
+    }
 }
