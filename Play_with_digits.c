@@ -1,32 +1,31 @@
 #include<stdio.h>
-int digitsum(int n)
+int digit(int n)
 {
     if(n<10)
     {
         return n;
     }
-    int r,sum=0;
+    int r,s=0;
     while(n!=0)
     {
         r=n%10;
-        sum+=r;
+        s+=r;
         n/=10;
     }
-    return sum;
+    return s;
 }
 int main()
 {
-    int n,sum=0;
+    int n,s=0;
     scanf("%d",&n);
     int a[n];
     for(int i=0;i<n;i++)
     {
         scanf("%d",&a[i]);
     }
-    for(int i=0;i<n;i++)
+    for(int i=00;i<n;i++)
     {
-        sum+=digitsum(a[i]);
+        s+=digit(a[i]);
     }
-    printf("%d",sum);
-    return 0;
+    printf("%d",s);
 }
