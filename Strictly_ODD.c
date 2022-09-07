@@ -3,19 +3,29 @@ int main()
 {
     int n;
     scanf("%d",&n);
-    int a[n],i,k=0;
-    for(i=0;i<n;i++)
-    scanf("%d",&a[i]);
-    for(i=0;i<n;i++)
+    int a[n],s=0;
+     for(int i=0;i<n;i++)
     {
-        if(a[i]%2!=0)
+        scanf("%d",&a[i]);
+    }
+     for(int i=0;i<n;i++)
+    {
+        if(a[i]%2==1)
         {
-            if(i%2==0)
-            k=1;
+            if(i%2==1)
+            {
+                s=0;
+            }
+            else
+            {
+                s=1;
+                printf("False");
+                break;
+            }
         }
     }
-    if(k==0)
-    printf("True");
-    else
-    printf("False");
+    if(s==0)
+    {
+        printf("True");
+    }
 }
