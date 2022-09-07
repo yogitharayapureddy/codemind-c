@@ -1,52 +1,28 @@
 #include<stdio.h>
-#include<math.h>
-int happy(int x)
+int add(int n)
 {
-    int s=0,r,res;
-    while(1>0)
+    int r,s=0;
+    while(n)
     {
-        s=0;
-        while(x>0)
-        {
-           
-               r=x%10;
-               s+=pow(r,2);
-               x=x/10;
-          
-           
-        }
-        if(s>9)
-        {
-            x=s;
-            continue;
-        }
-        else
-        {
-            break;
-        }
+        r=n%10;
+        s=s+r*r;
+        n/=10;
     }
-    if(s==1 || s==7)
+    if(s>=10)
     {
-        res=1;
-        return res;
+        return add(s);
     }
     else
     {
-        res=0;
-        return res;
+        return s;
     }
-}
-int main()
+}int main()
 {
-    int a,res;
-    scanf("%d",&a);
-    res=happy(a);
-    if(res==1)
-    {
-        printf("True");
-    }
+    int n;
+    scanf("%d",&n);
+    if(add(n)==1 ||add(n)==7)
+    printf("True");
     else
-    {
-        printf("False");
-    }
+    printf("False");
+    
 }
