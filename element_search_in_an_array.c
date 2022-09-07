@@ -1,21 +1,24 @@
 #include<stdio.h>
 int main()
 {
-    int a[100],n,i,s;
+    int n;
     scanf("%d",&n);
-    for(i=0;i<n;i++)
+    int a[n],s=0;
+    for(int i=00;i<n;i++)
     {
         scanf("%d",&a[i]);
     }
-    scanf("%d",&s);
-    for(i=0;i<n;i++)
+    int k;
+    scanf("%d",&k);
+    for(int i=n-1;i>=0;i--)
     {
-        if(s==a[i])
+        if(a[i]==k)
         {
-        printf("True");
-        return 0;
+            printf("True");
+            s=1;
+            break;
         }
     }
-   
+    if(s==0)
     printf("False");
 }
