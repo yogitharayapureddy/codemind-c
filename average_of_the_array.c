@@ -1,14 +1,14 @@
 #include<stdio.h>
 int main()
 {
-    int a[100],n,i;
-    float avg=0,sum=0;
+    int n;
     scanf("%d",&n);
-    for(i=0;i<n;i++)
+    int a[n],s=0;
+    for(int i=0;i<n;i++)
     {
         scanf("%d",&a[i]);
-        sum=sum+a[i];
+        s+=a[i];
     }
-    avg=sum/n;
-    printf("%.2f",avg);
+    float a1=(float)s/n;
+    printf("%.2f",a1);
 }
