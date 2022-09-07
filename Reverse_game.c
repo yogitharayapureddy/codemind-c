@@ -1,5 +1,5 @@
 #include<stdio.h>
-int rev(int n)
+int pal(int n)
 {
     int r,sum=0;
     while(n!=0)
@@ -15,13 +15,13 @@ int main()
     int n;
     scanf("%d",&n);
     int a[n];
-    for(int i=0;i<n;i++)
+    for(int i=00;i<n;i++)
     {
         scanf("%d",&a[i]);
     }
-    for(int i=0;i<n;i++)
+    for(int i=00;i<n;i++)
     {
-        printf("%d ",rev(a[i]));
+        printf("%d ",pal(a[i]));
     }
-    return 0;
+    
 }
