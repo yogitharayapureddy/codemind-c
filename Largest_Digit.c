@@ -1,16 +1,29 @@
 #include<stdio.h>
 int main()
 {
-    int n,i,temp=0;
+    int n,a,b,c;
     scanf("%d",&n);
+    b=0,c=0;
     while(n>0)
     {
-        i=n%10;
+        a=n%10;
+        n=n/10;
+        if(a>=b)
         {
-            if(i>temp)
-            temp=i;
-        }n=n/10;
-        
+            b=a;
+        }
+        else
+        {
+            c=a;
+        }
     }
-    printf("%d",temp);
+        if(b>c)
+        {
+            printf("%d",b);
+        }
+        else
+        {
+            printf("%d",c);
+        }
+    
 }
