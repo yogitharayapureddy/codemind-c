@@ -2,10 +2,12 @@
 #include<math.h>
 int main()
 {
-    int a,n;
+    int n,a;
+    float b;
     scanf("%d",&n);
     a=sqrt(n);
-    if(n==a*a)
+    b=sqrt(n);
+    if(b-a==0)
     printf("True");
     else
     printf("False");
