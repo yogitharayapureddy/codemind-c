@@ -1,36 +1,36 @@
 #include<stdio.h>
-int digit(int n)
+int countd(int n)
 {
-    int r,c=0;
-    while(n!=0)
+    int d,c=0;
+    while(n)
     {
-        r=n%10;
+        d=n%10;
+        n=n/10;
         c++;
-        n/=10;
     }
     return c;
 }
 int main()
 {
-int n,i,max=0,ct=0;
-scanf("%d",&n);
-int a[n];
-for(i=0;i<n;i++)
-{
-    scanf("%d",&a[i]);
-}
-for(i=0;i<n;i++)
-{
-    if(digit(a[i])>max)
+    int n,a[100],k,i,m=0,j;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
     {
-        max=digit(a[i]);
+        scanf("%d",&a[i]);
     }
-}
-for(i=0;i<n;i++)
-{
-    if(digit(a[i])==max)
+    for(i=0;i<n;i++)
     {
-        printf("%d ",a[i]);
+        k=countd(a[i]);
+        if(k>=m)
+        {
+            m=k;
+        }
     }
-}
+    for(j=0;j<n;j++)
+    {
+        if(countd(a[j])==m)
+        {
+            printf("%d ",a[j]);
+        }
+    }
 }
