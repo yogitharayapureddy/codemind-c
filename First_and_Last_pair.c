@@ -20,5 +20,6 @@ int main()
             else
             printf("%d %d",a[i],0);
         }
+
     }
 }
