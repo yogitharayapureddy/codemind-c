@@ -1,21 +1,31 @@
 #include<stdio.h>
+#include<stdlib.h>
 int main()
 {
-    int n,a[100],i,m,s,c,r;
+    int n,arr[100],i,diff,sum1=0,sum2=0,e,d;
     scanf("%d",&n);
     for(i=0;i<n;i++)
     {
-        scanf("%d",&a[i]);
+        scanf("%d",&arr[i]);//1 2 3 4 5 6
     }
-    m=n/2;
-    for(i=0;i<m;i++)
+    if(n%2)
     {
-        s=s+a[i];
+        e=(n-1)/2;
+        d=n-e;
     }
-    for(i=m;i<n;i++)
+    else
     {
-        c=c+a[i];
+        e=n/2;//3
+        d=n-e;//3
     }
-    r=c-s;
-    printf("%d",r);
+    for(i=0;i<e;i++)//2
+    {
+        sum1+=arr[i];//1+
+    }
+    for(i=e;i<n;i++)
+    {
+        sum2+=arr[i];
+    }
+    diff=abs(sum1-sum2);
+    printf("%d",diff);
 }
