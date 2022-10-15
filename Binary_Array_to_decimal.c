@@ -2,15 +2,17 @@
 #include<math.h>
 int main()
 {
-    int n;
+    int arr[100],i,n,sum=0,t;
     scanf("%d",&n);
-    int a[n],i,k=0,c=0;
     for(i=0;i<n;i++)
-    scanf("%d",&a[i]);
-    for(i=n-1;i>=0;i--)
     {
-        c=c+a[i]*pow(2,k);
-        k++;
+        scanf("%d",&arr[i]);
     }
-    printf("%d",c);
+    t=n;
+    for(i=0;i<n;i++)
+    {
+        sum+=pow(2,t-1)*arr[i];
+        t--;
+    }
+    printf("%d",sum);
 }
